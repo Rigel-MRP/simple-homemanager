@@ -120,10 +120,10 @@ Now we get to something a little more interesting.
 ```nix
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -139,11 +139,11 @@ But hold on, what's this `nixpkgs.url` thing?
 {
   # Exactly the same as below
   nixpkgs = {
-    url = "nixpkgs/nixos-23.11";
+    url = "nixpkgs/nixos-25.05";
   };
 
   # Totally the same!
-  nixpkgs.url = "nixpkgs/nixos-23.11";
+  nixpkgs.url = "nixpkgs/nixos-25.05";
 }
 ```
 
@@ -158,12 +158,12 @@ point in the nesting. It will all combine as you'd expect:
 ```nix
 {
   # The same as what we have in our flake!
-  home-manager.url = "github:nix-community/home-manager/release-23.11";
+  home-manager.url = "github:nix-community/home-manager/release-25.05";
   home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
   # Also the same!
   home-manager = {
-    url = "github:nix-community/home-manager/release-23.11";
+    url = "github:nix-community/home-manager/release-25.05";
     inputs = {
       nixpkgs = {
         follows = "nixpkgs";
@@ -191,8 +191,8 @@ Github repositories we're locking to, then you're fine to move on.
 
 `nixpkgs` is a bit special. It's a reference to the [Nixpkgs repository](https://github.com/NixOS/nixpkgs),
 which contains over 80,000 packages. It's so special it gets its own import
-without needing any github information. The `23.11` part is a git tag. You can
-[see it here](https://github.com/NixOS/nixpkgs/releases/tag/23.11) if you're
+without needing any github information. The `25.05` part is a git tag. You can
+[see it here](https://github.com/NixOS/nixpkgs/releases/tag/25.05) if you're
 curious. There's nothing special about it otherwise, it's just a tag to freeze
 all the packages at a specific version. You can use other tags, provide a
 specific git commit SHA, or even go `unstable` if you want to get the latest

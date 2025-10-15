@@ -43,10 +43,10 @@ neuroscience thing, just do it.
   description = "My Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -95,7 +95,7 @@ yet. You're almost there, answers are coming.
 
     # You do not need to change this if you're reading this in the future.
     # Don't ever change this after the first build.  Don't ask questions.
-    stateVersion = "23.11";
+    stateVersion = "25.05";
   };
 }
 ```
@@ -206,7 +206,7 @@ just add the name with some whitespace. Like so:
     homeDirectory = "/home/myusername";
 
     # Don't ever change this after the first build.  Don't ask questions.
-    stateVersion = "23.11";
+    stateVersion = "25.05";
   };
 }
 ```

@@ -47,7 +47,7 @@ which is itself a module.
     username = "myusername";
     homeDirectory = "/home/myusername";
 
-    stateVersion = "23.11";
+    stateVersion = "25.05";
   };
 }
 ```
